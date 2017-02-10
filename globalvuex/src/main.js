@@ -7,6 +7,9 @@ import router from './router'
 import Vuex from 'vuex'
 Vue.use(Vuex)
 
+import storePlugin from './storePlugin'
+Vue.use(storePlugin)
+
 /* eslint-disable no-new */
 new Vue({
   el: '#app',

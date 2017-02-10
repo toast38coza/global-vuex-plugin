@@ -1,18 +1,21 @@
 <template>
   <div class="hello">
     <h1>The count is: {{ count }}</h1>
+    <button @click='doIncrement' >Increment</button>
   </div>
 </template>
 
 <script>
-import store from '../store'
 export default {
-  store,
   name: 'hello',
-  data () {
-    return {
-      msg: 'Welcome to Your Vue.js App',
-      count: store.state.count
+  computed: {
+    count () {
+      return this.$myStore.state.count
+    }
+  },
+  methods: {
+    doIncrement () {
+      this.$myStore.commit('increment')
     }
   }
 }
